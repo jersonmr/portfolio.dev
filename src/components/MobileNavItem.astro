@@ -1,0 +1,13 @@
+---
+import { Popover } from "@headlessui/react";
+
+interface Props {
+    href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<li>
+    <slot />
+</li>
