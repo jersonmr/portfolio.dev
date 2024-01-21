@@ -1,5 +1,6 @@
 ---
-import { type HTMLAttributes } from "astro/types";
+/** @jsxImportSource astro */
+import type { HTMLAttributes } from "astro/types";
 
 const variantStyles = {
     primary:
@@ -10,7 +11,7 @@ const variantStyles = {
 
 type ButtonProps = {
     variant?: keyof typeof variantStyles;
-} & ((HTMLAttributes<"button"> & { href?: never }) | HTMLAttributes<"a">);
+} & ((HTMLAttributes<"button"> & { href?: undefined }) | HTMLAttributes<"a">);
 
 const { variant = "primary" } = Astro.props as ButtonProps;
 ---
@@ -23,6 +24,7 @@ const { variant = "primary" } = Astro.props as ButtonProps;
                 variantStyles[variant],
                 Astro.props.class,
             ]}
+            {...Astro.props}
         >
             <slot />
         </button>
@@ -34,6 +36,7 @@ const { variant = "primary" } = Astro.props as ButtonProps;
                 variantStyles[variant],
                 Astro.props.class,
             ]}
+            {...Astro.props}
         >
             <slot />
         </a>
