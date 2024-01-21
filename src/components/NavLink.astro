@@ -1,0 +1,14 @@
+---
+import Button from "./Button.astro";
+const { href } = Astro.props;
+---
+
+<a
+    href={href}
+    class:list={[
+        "transition hover:text-teal-500 dark:hover:text-teal-400",
+        Astro.props.class,
+    ]}
+>
+    <slot />
+</a>
