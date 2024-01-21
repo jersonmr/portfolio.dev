@@ -6,8 +6,10 @@ import XIcon from "../components/icons/XIcon.astro";
 import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import MailIcon from "../components/icons/MailIcon.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
 import Posts from "../components/Posts.astro";
 import Resume from "../components/Resume.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout
@@ -62,6 +64,18 @@ import Resume from "../components/Resume.astro";
                     target="_blank"><MailIcon class="h-6 w-6 transition" /></a
                 >
             </div>
+        </div>
+    </Container>
+
+    <Container class="mt-24 md:mt-28">
+        <div>
+            <h2
+                class="text-2xl font-semibold tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100 flex gap-x-3 mb-6 items-center"
+            >
+                <CodeIcon class="size-7" />
+                Projects
+            </h2>
+            <Projects />
         </div>
     </Container>
 

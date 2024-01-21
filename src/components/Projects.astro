@@ -1,0 +1,54 @@
+---
+const PROJECTS = [
+    {
+        title: "JGP - Make the most of your trip to Japan",
+        description:
+            "Find restaurants in best locations, with the best prices and the best reviews. Buy gourmet passes and get discounts in the best restaurants in Japan.",
+        image: "/images/projects/jgp.webp",
+        link: "https://japangourmetpass.com",
+        github: "https://www.github.com",
+        tags: ["Tailwind CSS", "Laravel", "MySQL", "Livewire"],
+    },
+];
+---
+
+<section
+    class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+>
+    {
+        PROJECTS.map(({ image, title, description, tags, link, github }) => (
+            <article class="project">
+                <div class="project__image">
+                    <img
+                        class="rounded shadow-2xl shadow-white/10"
+                        src={image}
+                        alt={title}
+                    />
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-lg text-pretty text-white/80 font-semibold pt-8">
+                        {title}
+                    </h3>
+                    <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 text-pretty">
+                        {description}
+                    </p>
+                    <div class="flex flex-wrap gap-x-4 gap-y-3">
+                        {tags.map((tag) => (
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                    <div class="project__links">
+                        <a href={link} class="project__link">
+                            Live
+                        </a>
+                        <a href={github} class="project__link">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+        ))
+    }
+</section>
