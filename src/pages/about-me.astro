@@ -1,0 +1,163 @@
+---
+import Button from "@/components/Button.astro";
+import Container from "@/components/Container.astro";
+import SocialLink from "@/components/SocialLink.astro";
+import GitHubIcon from "@/components/icons/GitHubIcon.astro";
+import InstagramIcon from "@/components/icons/InstagramIcon.astro";
+import LinkedInIcon from "@/components/icons/LinkedInIcon.astro";
+import MailIcon from "@/components/icons/MailIcon.astro";
+import TwitterIcon from "@/components/icons/TwitterIcon.astro";
+import XIcon from "@/components/icons/XIcon.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+    title="Jerson Moreno Portfolio - About me"
+    description="A little more info about who is Jerson Moreno and what he does."
+>
+    <Container>
+        <div
+            class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
+        >
+            <div class="lg:pl-20">
+                <div class="max-w-xs px-2.5 lg:max-w-none">
+                    <img
+                        src="/images/portrait.jpg"
+                        alt="me"
+                        class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                        sizes="(min-width: 1024px) 32rem, 20rem"
+                        style="color: transparent;"
+                    />
+                </div>
+            </div>
+
+            <div class="lg:order-first lg:row-span-2">
+                <h1
+                    class="text-xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100"
+                >
+                    Soy Jerson Moreno. Vivo en Cumaná, Venezuela desde donde
+                    construyo soluciones web.
+                </h1>
+
+                <div
+                    class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400"
+                >
+                    <p>
+                        Di mis primeros pasos como programador en la Universidad
+                        estudiando la carrera de Licenciatura en Informática,
+                        donde aprendí los fundamentos y la lógica de
+                        programación.
+                    </p>
+
+                    <p>
+                        Luego de graduarme, comencé a trabajar como
+                        desarrollador web en una empresa de desarrollo de
+                        software, donde aprendí a trabajar en equipo y a
+                        desarrollar aplicaciones web con tecnologías como PHP,
+                        MySQL, HTML, CSS, JavaScript, jQuery, entre otras.
+                    </p>
+
+                    <p>
+                        En 2017, decidí emprender mi propio camino como
+                        desarrollador web freelance, donde he tenido la
+                        oportunidad de trabajar con clientes de todo el mundo,
+                        desarrollando aplicaciones web con tecnologías como
+                        WordPress, Laravel, Vue.js, React.js, Node.js, entre
+                        otras.
+                    </p>
+
+                    <p>
+                        En la actualidad, me encuentro trabajando como
+                        desarrollador web freelance, donde ayudo a mis clientes
+                        a crear aplicaciones web personalizadas, que se ajusten
+                        a sus necesidades y que les permitan alcanzar sus
+                        objetivos.
+                    </p>
+
+                    <p>
+                        He trabajado con empresas en varios partes del mundo,
+                        incluyendo países como Colombia, España, Japón, Irlanda
+                        y Estados Unidos. Ejemplo de ellas serian <Button
+                            variant="secondary"
+                            href="https://square1.io"
+                            target="_blank"
+                        >
+                            Square1
+                        </Button>
+                        <Button
+                            variant="secondary"
+                            href="https://aguayo.co"
+                            target="_blank"
+                        >
+                            Aguayo Publicidad
+                        </Button>
+                        <Button
+                            variant="secondary"
+                            href="https://wehaa.com"
+                            target="_blank"
+                        >
+                            Wehaa
+                        </Button>
+                    </p>
+                </div>
+            </div>
+            <div class="lg:pl-20">
+                <ul role="list">
+                    <SocialLink href="https://x.com/JersonMorenoR">
+                        <XIcon
+                            slot="icon"
+                            class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"
+                        />
+                        Follow on X
+                    </SocialLink>
+                    <SocialLink
+                        href="https://github.com/jersonmr"
+                        className="mt-4"
+                    >
+                        <GitHubIcon
+                            slot="icon"
+                            class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"
+                        />
+                        Follow on GitHub
+                    </SocialLink>
+                    <SocialLink
+                        href="https://linkedin.com/in/jersonmr"
+                        className="mt-4"
+                    >
+                        <LinkedInIcon
+                            slot="icon"
+                            class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"
+                        />
+                        Follow on LinkedIn
+                    </SocialLink>
+                    <SocialLink
+                        href="mailto:jersonmr@gmail.com"
+                        className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+                    >
+                        <MailIcon
+                            slot="icon"
+                            class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"
+                        />
+                        jersonmr@gmail.com
+                    </SocialLink>
+                    <!-- <SocialLink href="#" icon={InstagramIcon} class="mt-4">
+                        Follow on Instagram
+                    </SocialLink>
+                    <SocialLink href="#" icon={GitHubIcon} class="mt-4">
+                        Follow on GitHub
+                    </SocialLink>
+                    <SocialLink href="#" icon={LinkedInIcon} class="mt-4">
+                        Follow on LinkedIn
+                    </SocialLink>
+                    <SocialLink
+                        href="mailto:spencer@planetaria.tech"
+                        icon={MailIcon}
+                        class="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+                    >
+                        spencer@planetaria.tech
+                    </SocialLink> -->
+                </ul>
+            </div>
+        </div>
+    </Container>
+</Layout>
