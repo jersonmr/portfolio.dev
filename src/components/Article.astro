@@ -1,0 +1,35 @@
+---
+const { article } = Astro.props;
+import Card from "./Card/Card.astro";
+import CardCta from "./Card/CardCta.astro";
+import CardDescription from "./Card/CardDescription.astro";
+import CardEyebrow from "./Card/CardEyebrow.astro";
+import CardTitle from "./Card/CardTitle.astro";
+import { formatDate } from "../scripts/formatDate.js";
+console.log(article);
+---
+
+<article class="md:grid md:grid-cols-4 md:items-baseline">
+    <Card class="md:col-span-3">
+        <CardTitle href={`/articles/${article.slug}`}>
+            {article.data.title}
+        </CardTitle>
+        <CardEyebrow
+            as="time"
+            datetime={article.data.pubDate}
+            class="md:hidden"
+            decorate
+        >
+            {formatDate(article.data.pubDate)}
+        </CardEyebrow>
+        <CardDescription>{article.data.description}</CardDescription>
+        <CardCta>Read article</CardCta>
+    </Card>
+    <CardEyebrow
+        as="time"
+        dateTime={article.data.pubDate}
+        class="mt-1 hidden md:block"
+    >
+        {formatDate(article.data.pubDate)}
+    </CardEyebrow>
+</article>

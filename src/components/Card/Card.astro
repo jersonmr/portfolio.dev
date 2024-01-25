@@ -1,0 +1,13 @@
+---
+const as = Astro.props.as ?? "div";
+const Component = as;
+---
+
+<Component
+    class:list={[
+        "group relative flex flex-col items-start",
+        ...Astro.props.class,
+    ]}
+>
+    <slot />
+</Component>
