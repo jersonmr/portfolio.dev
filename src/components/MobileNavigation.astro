@@ -1,6 +1,5 @@
 ---
 import MobileNavItem from "./MobileNavItem.astro";
-console.log({ ...Astro.props });
 ---
 
 <div class="pointer-events-auto md:hidden">
@@ -35,35 +34,28 @@ console.log({ ...Astro.props });
             <a
                 href="/"
                 class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-                >Home</a
+                >Inicio</a
             >
         </li>
         <li>
             <a
-                href="/about"
+                href="/about-me"
                 class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-                >About</a
+                >Sobre mi</a
+            >
+        </li>
+        <li>
+            <a
+                href="/articles"
+                class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+                >Artículos</a
             >
         </li>
         <li>
             <a
                 href="/projects"
                 class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-                >Articles</a
-            >
-        </li>
-        <li>
-            <a
-                href="/projects"
-                class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-                >Projects</a
-            >
-        </li>
-        <li>
-            <a
-                href="/contact"
-                class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-                >Contact</a
+                >Proyectos</a
             >
         </li>
     </ul>
