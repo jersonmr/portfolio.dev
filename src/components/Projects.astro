@@ -1,52 +1,71 @@
 ---
 const PROJECTS = [
     {
-        title: "JGP - Make the most of your trip to Japan",
+        title: "Mocatec - Soluciones para tu negocio",
         description:
-            "Find restaurants in best locations, with the best prices and the best reviews. Buy gourmet passes and get discounts in the best restaurants in Japan.",
+            "Un aliado capaz de hacerse cargo de todo el proceso de desarrollo de soluciones tecnológicas para tu negocio.",
+        logo: MocatecImage,
+        link: {
+            href: "https://japangourmetpass.com",
+            label: "japangourmetpass.com",
+        },
+        tags: ["Tailwind CSS", "Laravel", "Livewire"],
+    },
+    {
+        title: "JGP - Visite los mejores restaurantes de Japón con reservas gratuitas",
+        description:
+            "Una selección de restaurantes po todo Japón, con menús de Inglés. Disfruta de reservas ilimitadas gratuitas con Japan Gourmet Pass!",
         logo: JgpImage,
         link: {
             href: "https://japangourmetpass.com",
             label: "japangourmetpass.com",
         },
-        tags: ["Tailwind CSS", "Laravel", "MySQL", "Livewire"],
+        tags: ["Laravel", "Livewire", "Tailwind CSS"],
+    },
+    {
+        title: "Pisto - Préstamos rápidos para cualquier propósito en 24 horas",
+        description:
+            "La forma más segura y rápida para solicitar un préstamo de $30 a $150 sin visitar la oficina.",
+        logo: PistoAppImage,
+        link: {
+            href: "https://pisto.co",
+            label: "japangourmetpass.com",
+        },
+        tags: ["WordPress", "Flutter", "Laravel"],
     },
 ];
 import { Image } from "astro:assets";
 import JgpImage from "@/images/projects/jgp.webp";
+import PistoAppImage from "@/images/projects/pisto-app.jpg";
+import MocatecImage from "@/images/projects/mocatec.webp";
 ---
 
 <section
-    class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+    class="-mx-3 grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20"
 >
     {
         PROJECTS.map(({ logo, title, description, tags, link }) => (
-            <article class="project">
-                <div class="project__image">
-                    <Image
-                        class="rounded shadow-2xl shadow-white/10"
-                        src={logo}
-                        alt={title}
-                    />
+            <article class="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12">
+                <div class="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-40">
+                    <div class="absolute inset-0 flex items-center justify-center bg-[radial-gradient(#2C313D_35%,#000)]">
+                        <Image
+                            class="rounded shadow-2xl shadow-white/10"
+                            src={logo}
+                            alt={title}
+                        />
+                    </div>
                 </div>
-                <div class="space-y-4">
-                    <h3 class="text-lg text-pretty text-white/80 font-semibold pt-8">
+                <div>
+                    <h3 class="text-base font-medium tracking-tight text-slate-900">
                         {title}
                     </h3>
-                    <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 text-pretty">
-                        {description}
-                    </p>
-                    <div class="flex flex-wrap gap-x-4 gap-y-3">
+                    <p class="mt-2 text-sm text-slate-600">{description}</p>
+                    <div class="flex justify-center flex-wrap gap-x-2 gap-y-3 mt-4">
                         {tags.map((tag) => (
                             <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
                                 {tag}
                             </span>
                         ))}
-                    </div>
-                    <div class="project__links">
-                        <a href={link.href} class="project__link">
-                            {link.label}
-                        </a>
                     </div>
                 </div>
             </article>
