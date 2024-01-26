@@ -27,29 +27,3 @@ const articles = await getCollection("articles");
         </div>
     </SimpleLayout>
 </Layout>
-
-<!-- <Layout
-    title="Porfolio de Jerson Moreno - Artículos"
-    description="Escribiendo sobre diseño, desarrollo web y tecnología, coleccionándolos en orden cronológico."
->
-    <Container>
-        <div
-            class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
-        >
-            <div class="flex max-w-3xl flex-col space-y-16">
-                <ul>
-                    {
-                        articles.map((article) => (
-                            // <Article key={article.slug} article={article} />
-                            <li>
-                                <a href={`/articles/${article.slug}`}>
-                                    {article.data.title}
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
-        </div>
-    </Container>
-</Layout> -->
