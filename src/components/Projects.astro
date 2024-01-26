@@ -4,24 +4,28 @@ const PROJECTS = [
         title: "JGP - Make the most of your trip to Japan",
         description:
             "Find restaurants in best locations, with the best prices and the best reviews. Buy gourmet passes and get discounts in the best restaurants in Japan.",
-        image: "/images/projects/jgp.webp",
-        link: "https://japangourmetpass.com",
-        github: "https://www.github.com",
+        logo: JgpImage,
+        link: {
+            href: "https://japangourmetpass.com",
+            label: "japangourmetpass.com",
+        },
         tags: ["Tailwind CSS", "Laravel", "MySQL", "Livewire"],
     },
 ];
+import { Image } from "astro:assets";
+import JgpImage from "@/images/projects/jgp.webp";
 ---
 
 <section
     class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
 >
     {
-        PROJECTS.map(({ image, title, description, tags, link, github }) => (
+        PROJECTS.map(({ logo, title, description, tags, link }) => (
             <article class="project">
                 <div class="project__image">
-                    <img
+                    <Image
                         class="rounded shadow-2xl shadow-white/10"
-                        src={image}
+                        src={logo}
                         alt={title}
                     />
                 </div>
@@ -40,11 +44,8 @@ const PROJECTS = [
                         ))}
                     </div>
                     <div class="project__links">
-                        <a href={link} class="project__link">
-                            Live
-                        </a>
-                        <a href={github} class="project__link">
-                            GitHub
+                        <a href={link.href} class="project__link">
+                            {link.label}
                         </a>
                     </div>
                 </div>
