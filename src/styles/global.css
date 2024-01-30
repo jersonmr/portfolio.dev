@@ -32,3 +32,9 @@ html {
         background-color: rgb(10 10 10 / 1);
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
