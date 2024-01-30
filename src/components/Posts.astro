@@ -1,15 +1,20 @@
 ---
+import { getCollection } from "astro:content";
 import Post from "./Post.astro";
 
-const POSTS = [
-    {
-        title: "Como instalar Alpine.js",
-        date: "Enero 2024",
-        description:
-            "Breve introducción a Alpine.js, como instalarlo y el uso de su directiva x-data",
-        link: "/articles/como-instalar-alpinejs",
-    },
-];
+const articles = await getCollection("articles");
+
+const POSTS = articles.map((article) => {
+    const { slug, data } = article;
+    const { title, pubDate, description } = data;
+
+    return {
+        title: title,
+        date: pubDate,
+        description: description,
+        link: `/articles/${slug}`,
+    };
+});
 ---
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700">
