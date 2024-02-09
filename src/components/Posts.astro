@@ -4,17 +4,19 @@ import Post from "./Post.astro";
 
 const articles = await getCollection("articles");
 
-const POSTS = articles.map((article) => {
-    const { slug, data } = article;
-    const { title, pubDate, description } = data;
+const POSTS = articles
+    .map((article) => {
+        const { slug, data } = article;
+        const { title, pubDate, description } = data;
 
-    return {
-        title: title,
-        date: pubDate,
-        description: description,
-        link: `/articles/${slug}`,
-    };
-});
+        return {
+            title: title,
+            date: pubDate,
+            description: description,
+            link: `/articles/${slug}`,
+        };
+    })
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700">
