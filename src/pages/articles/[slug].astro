@@ -18,6 +18,7 @@ const { Content } = await entry.render();
 <Layout
     title=`Porfolio de Jerson Moreno - ${entry.data.title}`
     description={entry.data.description}
+    keywords={entry.data.tags}
 >
     <ArticleLayout article={entry}>
         <div class="prose lg:prose-xl dark:prose-invert">

@@ -7,9 +7,10 @@ import { ViewTransitions } from "astro:transitions";
 interface Props {
     title: string;
     description: string;
+    keywords?: Array<string>;
 }
 
-const { title, description } = Astro.props;
+const { title, description, keywords } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,6 +21,7 @@ const { title, description } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
         <meta name="generator" content={Astro.generator} />
+        <meta name="keywords" content={"Astro, " + keywords?.join(", ")} />
         <title>{title}</title>
         <ViewTransitions />
     </head>
